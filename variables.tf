@@ -18,9 +18,6 @@ variable "cidr_block" {
 variable "instance_tenancy" {
   description = "Tenancy option for instances launched into the VPC."
   default     = "dedicated"
-
-
-
 }
 
 
