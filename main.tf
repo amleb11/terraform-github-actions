@@ -1,8 +1,10 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
+
+
 terraform {
-cloud {
+  cloud {
     organization = "acme-organization1"
     workspaces {
       tags = ["teraform-github"]
@@ -20,7 +22,7 @@ cloud {
       version = "3.4.3"
     }
 
- azurerm = {
+    azurerm = {
       source  = "hashicorp/azurerm"
       version = "~> 3.0.2"
     }
@@ -34,7 +36,7 @@ cloud {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region     = "us-east-1"
   access_key = "AKIARYRDD3RF5NESKZCS"
   secret_key = "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"
 }
@@ -117,16 +119,16 @@ resource "aws_subnet" "main" {
 }
 
 provider "azurerm" {
-client_id = "9fdeb978-c3ef-4cf2-8a42-adacb8ad4540" 
-client_secret = "tCR8Q~yrLsBqpX81H3uvVwt-zu1Bq5yf3Z1encdv"  
-subscription_id = "8d53ad51-e58a-45c0-b66b-a6f16df01aac"
+  client_id       = "9fdeb978-c3ef-4cf2-8a42-adacb8ad4540"
+  client_secret   = "tCR8Q~yrLsBqpX81H3uvVwt-zu1Bq5yf3Z1encdv"
+  subscription_id = "8d53ad51-e58a-45c0-b66b-a6f16df01aac"
   tenant_id       = "76214f22-a59a-469b-b96b-6c84567fc1e6"
   #use_msi = true
-features {}
+  features {}
 }
 
 resource "azurerm_resource_group" "rg" {
-  name = "TF_ResourceGroup"
+  name     = "TF_ResourceGroup"
   location = var.resource_group_location
   tags = {
     Environment = "UAT"
