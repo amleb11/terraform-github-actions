@@ -129,7 +129,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name = "TFResourceGroup2"
+  name = "TF_ResourceGroup"
   location = var.resource_group_location
   tags = {
     Environment = "UAT"
