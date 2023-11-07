@@ -124,9 +124,9 @@ resource "aws_subnet" "main" {
   cidr_block = var.cidr_block
 }
 
-provider "azurerm" {
-  features {}
-}
+#provider "azurerm" {
+#  features {}
+#}
 
 resource "azurerm_resource_group" "rg" {
   name = "TFResourceGroup"
