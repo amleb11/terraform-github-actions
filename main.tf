@@ -35,8 +35,8 @@ cloud {
 
 provider "aws" {
   region = "us-east-1"
-  access_key = "AKIARYRDD3RFTVQSEBM3"
-  secret_key = "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"
+  access_key = "AKIARYRDD3RF5NESKZCS"
+  secret_key = "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"
 }
 
 #Create an app server - Type and Name
