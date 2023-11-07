@@ -48,14 +48,14 @@ resource "aws_instance" "app_server" {
 }
 
 #Create a web server
-resource "aws_instance" "web" {
-  ami           = "ami-01bc990364452ab3e"
-  instance_type = "t2.micro"
+#resource "aws_instance" "web" {
+ # ami           = "ami-01bc990364452ab3e"
+ # instance_type = "t2.micro"
 
-  tags = {
-    Name = "ACMEWebServerInstance"
-  }
-}
+ # tags = {
+  #  Name = "ACMEWebServerInstance"
+  #}
+#}
 
 resource "random_pet" "sg" {}
 
@@ -81,6 +81,11 @@ resource "aws_instance" "web" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.web-sg.id]
+
+
+  tags = {
+    Name = "ACMEWebServerInstance"
+  }
 
   user_data = <<-EOF
               #!/bin/bash
@@ -234,7 +239,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
     username   = var.username
     public_key = jsondecode(azapi_resource_action.ssh_public_key_gen.output).publicKey
   }
-
+}
 
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
