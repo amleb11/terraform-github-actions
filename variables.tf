@@ -26,14 +26,6 @@ variable "instance_tenancy" {
   default     = "dedicated"
 }
 
-#variable "access_key" {
-#  description = "AWS Access Key"
-#  default     = "AKIARYRDD3RFTVQSEBM3"
-#}
-
-#variable "secret_key" {
-#  default = "YQFz9tJ2IlgjdQHbcPjNzgLj0nHXX9MAtBspRzzz"
-#}
 
 variable "region" {
   default = "us-east-1"
