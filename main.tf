@@ -117,7 +117,11 @@ resource "aws_subnet" "main" {
 }
 
 provider "azurerm" {
-  features {}
+  
+subscription_id = "8eeaa6a4-a112-4764-b9c5-627575d9a2d9"
+  tenant_id       = "76214f22-a59a-469b-b96b-6c84567fc1e6"
+  use_msi = true
+features {}
 }
 
 resource "azurerm_resource_group" "rg" {
