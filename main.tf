@@ -47,16 +47,6 @@ resource "aws_instance" "app_server" {
   }
 }
 
-#Create a web server
-#resource "aws_instance" "web" {
- # ami           = "ami-01bc990364452ab3e"
- # instance_type = "t2.micro"
-
- # tags = {
-  #  Name = "ACMEWebServerInstance"
-  #}
-#}
-
 resource "random_pet" "sg" {}
 
 data "aws_ami" "ubuntu" {
@@ -76,7 +66,7 @@ data "aws_ami" "ubuntu" {
 }
 
 
-
+#Create a web server
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = "t2.micro"
