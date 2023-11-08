@@ -47,7 +47,7 @@ resource "aws_instance" "app_server" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "ACMEAppServerInstance1"
+    Name = "ACMEAppServerInstance3"
   }
 }
 
@@ -78,7 +78,7 @@ resource "aws_instance" "web" {
 
 
   tags = {
-    Name = "ACMEWebServerInstance"
+    Name = "ACMEWebServerInstance2"
   }
 
   user_data = <<-EOF
