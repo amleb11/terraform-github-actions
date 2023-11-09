@@ -1,8 +1,6 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-
-
 terraform {
   cloud {
     organization = "acme-organization1"
@@ -36,16 +34,6 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
-}
-
-#Create an app server - Type and Name
-resource "aws_instance" "app_server" {
-  ami           = "ami-01bc990364452ab3e"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "ACMEAppServerInstance3"
-  }
 }
 
 #Create an app server - Type and Name
