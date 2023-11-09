@@ -1,6 +1,8 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
+#AWS + AZURE
+
 terraform {
   cloud {
     organization = "acme-organization1"
