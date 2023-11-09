@@ -1,8 +1,6 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-
-
 terraform {
   cloud {
     organization = "acme-organization1"
@@ -105,7 +103,6 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
 
 resource "aws_vpc" "main" {
   cidr_block       = var.cidr_block
