@@ -36,17 +36,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-#Create an app server - Type and Name
-resource "aws_instance" "app_server" {
-  ami           = "ami-01bc990364452ab3e"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "ACMEAppServerInstance4"
-  }
-}
-
-
 resource "random_pet" "sg" {}
 
 data "aws_ami" "ubuntu" {
