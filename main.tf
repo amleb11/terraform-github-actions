@@ -122,14 +122,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "TF_ResourceGroup"
-  location = var.resource_group_location
-  tags = {
-    Environment = "UAT"
-    Team        = "DevOps"
-  }
-}
-resource "azurerm_resource_group" "rg" {
   name     = "TF_ResourceGroup2"
   location = var.resource_group_location
   tags = {
@@ -137,7 +129,6 @@ resource "azurerm_resource_group" "rg" {
     Team        = "DevOps"
   }
 }
-
 
 # Create virtual network
 resource "azurerm_virtual_network" "my_terraform_network" {
