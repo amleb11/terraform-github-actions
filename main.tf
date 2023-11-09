@@ -129,6 +129,14 @@ resource "azurerm_resource_group" "rg" {
     Team        = "DevOps"
   }
 }
+resource "azurerm_resource_group" "rg" {
+  name     = "TF_ResourceGroup2"
+  location = var.resource_group_location
+  tags = {
+    Environment = "UAT"
+    Team        = "DevOps"
+  }
+}
 
 
 # Create virtual network
