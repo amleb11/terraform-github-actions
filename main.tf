@@ -228,6 +228,13 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
   }
 }
 
+output = "web server ami" {
+  value = "${aws_instance.web.ami}
+}
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8080"
+
+}
+
+
 }
