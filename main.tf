@@ -73,7 +73,7 @@ resource "aws_instance" "web" {
 
 
   tags = {
-    Name = "ACMEWebServerInstance10"
+    Name = "ACMEWebServerInstance1"
   }
 
   user_data = <<-EOF
