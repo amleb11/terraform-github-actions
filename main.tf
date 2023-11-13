@@ -15,7 +15,7 @@ terraform {
       source  = "hashicorp/aws"
       version = "4.52.0"
     }
-azurerm = {
+    azurerm = {
       source  = "hashicorp/azurerm"
       version = "~> 3.0.2"
     }
@@ -227,11 +227,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
     public_key = jsondecode(azapi_resource_action.ssh_public_key_gen.output).publicKey
   }
 }
-
-output = "web server ami" {
-  value = "${aws_instance.web.ami}"
-}
 output "web-address" {
-  value = "${aws_instance.web.public_dns}:8080"
-
+  value = "${aws_instance.web.public_dns}:8080 ${aws_instance.web.ami} "
 }
+
