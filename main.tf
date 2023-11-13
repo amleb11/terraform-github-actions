@@ -52,15 +52,6 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
-#Create an app server - Type and Name
-resource "aws_instance" "app_server" {
-  ami           = "ami-01bc990364452ab3e"
-  instance_type = "t1.micro"
-
-  tags = {
-    Name = "ACMEAppServerInstance1"
-  }
-}
 #Create a web server
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.ubuntu.id
@@ -228,6 +219,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
   }
 }
 output "web-address" {
-  value = "${aws_instance.web.public_dns}:8080 ${aws_instance.web.ami} "
+# ami=ami-04b107e90218672e5
+  value = "${aws_instance.web.public_dns}:8080"
 }
 
