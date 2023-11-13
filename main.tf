@@ -61,7 +61,7 @@ resource "aws_instance" "app_server" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "ACMEAppServerInstance"
+    Name = "ACMEAppServerInstance2"
   }
 }
 
@@ -73,7 +73,7 @@ resource "aws_instance" "web" {
 
 
   tags = {
-    Name = "ACMEWebServerInstance8"
+    Name = "ACMEWebServerInstance10"
   }
 
   user_data = <<-EOF
@@ -93,6 +93,7 @@ resource "aws_security_group" "web-sg" {
     to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+
   }
   // connectivity to ubuntu mirrors is required to run `apt-get update` and `apt-get install apache2`
   egress {
