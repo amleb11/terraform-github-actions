@@ -52,6 +52,14 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
+#Create an app server - Type and Name
+resource "aws_instance" "app_server" {
+  ami           = "ami-01bc990364452ab3e"
+  instance_type = "t1.micro"
+
+  tags = {
+    Name = "ACMEAppServerInstance1"
+  }
 
 #Create a web server
 resource "aws_instance" "web" {
