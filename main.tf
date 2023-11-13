@@ -75,12 +75,13 @@ resource "aws_instance" "web" {
 
 #Create an app server - Type and Name
 resource "aws_instance" "app_server" {
-  ami           = "ami-01bc990364452ab3e"
-  instance_type = "t2.micro"
-  tags = {
-    Name = "ACMEAppServerInstance1"
-  }
+  ami           = "ami-01bc990364452ab3e"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "ACMEAppServerInstance1"
+  }
 }
+
 resource "aws_security_group" "web-sg" {
   name = "${random_pet.sg.id}-sg"
   ingress {
@@ -227,7 +228,7 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
   }
 }
 output "web-address" {
-# ami=ami-04b107e90218672e5
+  # ami=ami-04b107e90218672e5
   value = "${aws_instance.web.public_dns}:8080"
 }
 
