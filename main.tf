@@ -61,7 +61,7 @@ resource "aws_instance" "app_server" {
   tags = {
     Name = "ACMEAppServerInstance1"
   }
-
+}
 #Create a web server
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.ubuntu.id
