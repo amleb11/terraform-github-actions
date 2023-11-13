@@ -15,19 +15,17 @@ terraform {
       source  = "hashicorp/aws"
       version = "4.52.0"
     }
-    random = {
-      source  = "hashicorp/random"
-      version = "3.4.3"
-    }
-
-    azurerm = {
+azurerm = {
       source  = "hashicorp/azurerm"
       version = "~> 3.0.2"
     }
-
     azapi = {
       source  = "azure/azapi"
       version = "~>1.5"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "3.4.3"
     }
   }
   required_version = ">= 1.1.0"
@@ -54,6 +52,15 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
+
+#Create an app server - Type and Name
+resource "aws_instance" "app_server" {
+  ami           = "ami-01bc990364452ab3e"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "ACMEAppServerInstance1"
+  }
 
 #Create a web server
 resource "aws_instance" "web" {
