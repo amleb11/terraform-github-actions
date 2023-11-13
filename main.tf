@@ -56,14 +56,14 @@ data "aws_ami" "ubuntu" {
 }
 
 #Create an app server - Type and Name
-#resource "aws_instance" "app_server" {
-#  ami           = "ami-01bc990364452ab3e"
-#  instance_type = "t2.micro"
+resource "aws_instance" "app_server" {
+  ami           = "ami-01bc990364452ab3e"
+  instance_type = "t2.micro"
 
- # tags = {
-  #  Name = "ACMEAppServerInstance2"
- # }
-#}
+  tags = {
+    Name = "ACMEAppServerInstance2"
+  }
+}
 
 #Create a web server
 resource "aws_instance" "web" {
