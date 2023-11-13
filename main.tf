@@ -61,22 +61,9 @@ resource "aws_instance" "app_server" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "ACMEAppServerInstance"
-  }
-}
-
-#Create an app server - Type and Name
-resource "aws_instance" "app_server" {
-  ami           = "ami-01bc990364452ab3e"
-  instance_type = "t2.micro"
-
-  tags = {
     Name = "ACMEAppServerInstance2"
   }
 }
-
-
-
 
 #Create a web server
 resource "aws_instance" "web" {
@@ -106,6 +93,7 @@ resource "aws_security_group" "web-sg" {
     to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
+
   }
   // connectivity to ubuntu mirrors is required to run `apt-get update` and `apt-get install apache2`
   egress {
