@@ -73,14 +73,6 @@ resource "aws_instance" "web" {
               EOF
 }
 
-#Create an app server - Type and Name
-resource "aws_instance" "app_server" {
-  ami           = "ami-01bc990364452ab3e"
-  instance_type = "t2.micro"
-  tags = {
-    Name = "ACMEAppServerInstance1"
-  }
-}
 
 resource "aws_security_group" "web-sg" {
   name = "${random_pet.sg.id}-sg"
