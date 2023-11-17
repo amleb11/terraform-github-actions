@@ -89,14 +89,15 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-Create an app server - Type and Name
+# #Create an app server - Type and Name
 resource "aws_instance" "app_server" {
-ami = "ami-01bc990364452ab3e"
-instance_type = "t2.micro"
-tags = {
-Name = "ACMEAppServerInstance1"
+  ami           = "ami-01bc990364452ab3e"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "ACMEAppServerInstance1"
+  }
 }
-}
+
 resource "aws_vpc" "main" {
   cidr_block       = var.cidr_block
   instance_tenancy = var.instance_tenancy
